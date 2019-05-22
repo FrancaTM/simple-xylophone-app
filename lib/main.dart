@@ -9,17 +9,34 @@ void main() {
 class XylophoneApp extends StatelessWidget {
   final player = AudioCache();
 
+  void _playSound(int soundNumber) {
+    player.play('note$soundNumber.wav');
+  }
+
+  Widget _buildFlatButton(int soundNumber, Color buttonColor) {
+    return FlatButton(
+      color: buttonColor,
+      onPressed: () => _playSound(soundNumber),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
           child: Center(
-            child: FlatButton(
-              onPressed: () {
-                player.play('note1.wav');
-              },
-              child: Text('play'),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _buildFlatButton(1, Colors.red),
+                _buildFlatButton(2, Colors.orange),
+                _buildFlatButton(3, Colors.yellow),
+                _buildFlatButton(4, Colors.green),
+                _buildFlatButton(5, Colors.teal),
+                _buildFlatButton(6, Colors.blue),
+                _buildFlatButton(7, Colors.purple),
+              ],
             ),
           ),
         ),
