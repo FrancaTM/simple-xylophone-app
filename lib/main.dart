@@ -12,8 +12,6 @@ class XylophoneApp extends StatelessWidget {
   final player = AudioCache();
 
   void _playSound(Notes musicalNote) {
-//    print('Sound number: $soundNumber');
-
     int soundNumber;
     switch (musicalNote) {
       case Notes.doh:
