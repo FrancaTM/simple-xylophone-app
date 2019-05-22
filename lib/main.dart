@@ -40,7 +40,7 @@ class XylophoneApp extends StatelessWidget {
 //    }
   }
 
-  Widget _buildFlatButton(int soundNumber, Color buttonColor) {
+  Widget _buildFlatButton({Color buttonColor, int soundNumber}) {
     return Expanded(
       child: FlatButton(
         color: buttonColor,
@@ -58,13 +58,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              _buildFlatButton(1, Colors.red),
-              _buildFlatButton(2, Colors.orange),
-              _buildFlatButton(3, Colors.yellow),
-              _buildFlatButton(4, Colors.green),
-              _buildFlatButton(5, Colors.teal),
-              _buildFlatButton(6, Colors.blue),
-              _buildFlatButton(7, Colors.purple),
+              _buildFlatButton(soundNumber: 1, buttonColor: Colors.red),
+              _buildFlatButton(soundNumber: 2, buttonColor: Colors.orange),
+              _buildFlatButton(soundNumber: 3, buttonColor: Colors.yellow),
+              _buildFlatButton(soundNumber: 4, buttonColor: Colors.green),
+              _buildFlatButton(soundNumber: 5, buttonColor: Colors.teal),
+              _buildFlatButton(soundNumber: 6, buttonColor: Colors.blue),
+              _buildFlatButton(soundNumber: 7, buttonColor: Colors.purple),
             ],
           ),
         ),
