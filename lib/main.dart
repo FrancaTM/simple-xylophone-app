@@ -12,32 +12,32 @@ class XylophoneApp extends StatelessWidget {
   void _playSound(int soundNumber) {
     player.play('note$soundNumber.wav');
 
-//    print('Sound number: $soundNumber');
-//    switch (soundNumber) {
-//      case 1:
-//        print('dó');
-//        break;
-//      case 2:
-//        print('ré');
-//        break;
-//      case 3:
-//        print('mi');
-//        break;
-//      case 4:
-//        print('fá');
-//        break;
-//      case 5:
-//        print('sol');
-//        break;
-//      case 6:
-//        print('lá');
-//        break;
-//      case 7:
-//        print('si');
-//        break;
-//      default:
-//        print('NO NOTE');
-//    }
+    print('Sound number: $soundNumber');
+    switch (soundNumber) {
+      case 1:
+        print('dó');
+        break;
+      case 2:
+        print('ré');
+        break;
+      case 3:
+        print('mi');
+        break;
+      case 4:
+        print('fá');
+        break;
+      case 5:
+        print('sol');
+        break;
+      case 6:
+        print('lá');
+        break;
+      case 7:
+        print('si');
+        break;
+      default:
+        print('NO NOTE');
+    }
   }
 
   Widget _buildFlatButton({Color buttonColor, int soundNumber}) {
