@@ -6,47 +6,45 @@ void main() {
   runApp(XylophoneApp());
 }
 
-enum Notes { doh, re, mi, fa, sol, la, si }
-
 class XylophoneApp extends StatelessWidget {
   final player = AudioCache();
 
-  void _playSound(Notes musicalNote) {
-//    print('Sound number: $soundNumber');
-
-    int soundNumber;
-    switch (musicalNote) {
-      case Notes.doh:
-        soundNumber = 1;
-        break;
-      case Notes.re:
-        soundNumber = 2;
-        break;
-      case Notes.mi:
-        soundNumber = 3;
-        break;
-      case Notes.fa:
-        soundNumber = 4;
-        break;
-      case Notes.sol:
-        soundNumber = 5;
-        break;
-      case Notes.la:
-        soundNumber = 6;
-        break;
-      case Notes.si:
-        soundNumber = 7;
-        break;
-    }
-
+  void _playSound(int soundNumber) {
     player.play('note$soundNumber.wav');
+
+//    print('Sound number: $soundNumber');
+//    switch (soundNumber) {
+//      case 1:
+//        print('dó');
+//        break;
+//      case 2:
+//        print('ré');
+//        break;
+//      case 3:
+//        print('mi');
+//        break;
+//      case 4:
+//        print('fá');
+//        break;
+//      case 5:
+//        print('sol');
+//        break;
+//      case 6:
+//        print('lá');
+//        break;
+//      case 7:
+//        print('si');
+//        break;
+//      default:
+//        print('NO NOTE');
+//    }
   }
 
-  Widget _buildFlatButton({Color buttonColor, Notes musicalNote}) {
+  Widget _buildFlatButton({Color buttonColor, int soundNumber}) {
     return Expanded(
       child: FlatButton(
         color: buttonColor,
-        onPressed: () => _playSound(musicalNote),
+        onPressed: () => _playSound(soundNumber),
       ),
     );
   }
@@ -60,18 +58,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              _buildFlatButton(musicalNote: Notes.doh, buttonColor: Colors.red),
-              _buildFlatButton(
-                  musicalNote: Notes.re, buttonColor: Colors.orange),
-              _buildFlatButton(
-                  musicalNote: Notes.mi, buttonColor: Colors.yellow),
-              _buildFlatButton(
-                  musicalNote: Notes.fa, buttonColor: Colors.green),
-              _buildFlatButton(
-                  musicalNote: Notes.sol, buttonColor: Colors.teal),
-              _buildFlatButton(musicalNote: Notes.la, buttonColor: Colors.blue),
-              _buildFlatButton(
-                  musicalNote: Notes.si, buttonColor: Colors.purple),
+              _buildFlatButton(soundNumber: 1, buttonColor: Colors.red),
+              _buildFlatButton(soundNumber: 2, buttonColor: Colors.orange),
+              _buildFlatButton(soundNumber: 3, buttonColor: Colors.yellow),
+              _buildFlatButton(soundNumber: 4, buttonColor: Colors.green),
+              _buildFlatButton(soundNumber: 5, buttonColor: Colors.teal),
+              _buildFlatButton(soundNumber: 6, buttonColor: Colors.blue),
+              _buildFlatButton(soundNumber: 7, buttonColor: Colors.purple),
             ],
           ),
         ),
